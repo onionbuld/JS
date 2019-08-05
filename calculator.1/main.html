@@ -1,0 +1,45 @@
+<!doctype html>
+<script src="https://ru.js.cx/test/libs.js"></script>
+<script src="test.js"></script>
+<script>
+  "use strict"
+
+  let calculator = {
+	"NumOne": 0,
+	"NumTwo": 0,
+
+    read() {
+      
+        while(true){
+		this.NumOne = prompt("Число первое:", 0);
+      	if(this.isNumeric(this.NumOne)) break;
+      	alert(this.NumOne + " - is not numeric type!");
+      	}
+      	while(true){
+		this.NumTwo = prompt("Число второе:", 0);
+      	if(this.isNumeric(this.NumTwo)) break;
+      	alert(this.NumTwo + " - is not numeric type!");
+      	}
+
+    },
+
+    isNumeric(n) {
+    	return !isNaN(parseFloat(n)) && isFinite(n);
+    },
+
+    sum() {
+    	return (+this.NumOne) + (+this.NumTwo);
+    },
+
+    mul(){
+    	return this.NumOne * this.NumTwo;
+    },
+};
+
+  calculator.read();
+  alert( calculator.sum() );
+  alert( calculator.mul() );
+
+</script>
+
+</html>
